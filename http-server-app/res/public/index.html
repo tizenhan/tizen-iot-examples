@@ -36,8 +36,21 @@
         <div class="sidebar-sticky ">
           <ul class="nav flex-column ">
             <li class="nav-item">
-              <a class="nav-link active" id="system-tab" data-toggle="tab" href="#system" role="tab"
-                aria-controls="system" aria-selected="true">
+              <a class="nav-link active" id="face-tab" data-toggle="tab" href="#face" role="tab"
+                aria-controls="face" aria-selected="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-monitor">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+                <span class="nav-title">Face</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="system-tab" data-toggle="tab" href="#system" role="tab"
+                aria-controls="system">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                   class="feather feather-monitor">
@@ -96,7 +109,21 @@
       <!-- Main Content -->
       <main role="main" class="col-md-9 col-lg-10 pt-3 px-4">
         <div class="tab-content">
-          <div class="tab-pane active" id="system" role="tabpanel" aria-labelledby="system-tab">
+          <div class="tab-pane active" id="face" role="tabpanel" aria-labelledby="face-tab">
+            <h2 class="page-title">Face</h2>
+            <div id="face-information-content" class="card-deck">
+              <!-- <div class="col-xl-3 col-lg-5 col-md-5 col-sm-10 col-10 my-3">
+                <div class="card ">
+                  <div class="card-body">
+                    <p class="card-text">Manufacturer</p>
+                    <h5 class="card-title">Tizen</h5>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+
+          <div class="tab-pane" id="system" role="tabpanel" aria-labelledby="system-tab">
             <h2 class="page-title">System Information</h2>
             <div id="system-information-content" class="card-deck">
               <!-- <div class="col-xl-3 col-lg-5 col-md-5 col-sm-10 col-10 my-3">

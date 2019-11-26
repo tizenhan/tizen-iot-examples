@@ -22,6 +22,28 @@ function httpRequestAsync(httpMethod, path, successCallback, failCallback) {
 	xmlHttp.send(null);
 }
 
+// Face Info
+function setFaceInfo(jsonStr) {
+	var json = JSON.parse(jsonStr);
+	var parentElm = document.getElementById("face-information-content");
+
+	var strPreKey = "<div class='col-xl-5 col-lg-5 col-md-10 col-sm-10 col-10 my-3'><div class='card'><div class='card-body'><p class='card-text'>";
+	var strPreValue = "</p><h5 class='card-title'>";
+	var strEnd = "</h5></div></div></div>";
+
+	while (parentElm.hasChildNodes()) {
+		parentElm.removeChild(parentElm.firstChild);
+	}
+
+	for (x in json) {
+		parentElm.insertAdjacentHTML('beforeend', strPreKey + x + strPreValue + json[x] + strEnd);
+	}
+}
+
+function fetchFaceInfo() {
+	httpRequestAsync("GET", "/api/faceDetect", setFaceInfo);
+}
+
 // System Info
 function setSystemInfo(jsonStr) {
 	var json = JSON.parse(jsonStr);
@@ -226,6 +248,10 @@ function fetchApplicationList() {
 
 (() => {
 	document.addEventListener("DOMContentLoaded", function () {
+		fetchFaceInfo();
+	});
+
+	document.getElementById("system-tab").addEventListener("click", function () {
 		fetchSystemInfo();
 	});
 
